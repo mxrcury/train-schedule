@@ -1,5 +1,7 @@
 export class TrainScheduleInput {
-  startingStation: string;
-  terminalStation: string;
-  fullTicketPrice: string;
+  departureTime: string
+  arrivalTime: string
+  startingStation: string
+  terminalStation: string
+  fullTicketPrice: string
 }

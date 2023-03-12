@@ -1,17 +1,20 @@
-import { Entity, ObjectIdColumn, Column } from 'typeorm';
+import { Entity, ObjectIdColumn, Column } from 'typeorm'
 
 @Entity()
 export class TrainSchedule {
   @ObjectIdColumn()
-  _id: string;
+  _id: string
   @Column()
-  startingStation: string;
+  startingStation: string
   @Column()
-  terminalStation: string;
+  terminalStation: string
   @Column()
-  departureTime: string;
+  departureDate: string
   @Column()
-  arrivalTime: string;
+  arrivalDate: string
   @Column()
-  fullTicketPrice: string;
+  fullTicketPrice: string
+  constructor(trainSchedule?: Partial<TrainSchedule>) {
+    Object.assign(this, trainSchedule)
+  }
 }
