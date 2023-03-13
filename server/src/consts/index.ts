@@ -1,8 +1,8 @@
 export const SortByPicker = {
   price: {
-    fullTicketPrice: 'ASC',
+    fullTicketPrice: 'DESC',
   },
   date: {
-    departureTime: 'ASC',
+    departureDate: 'ASC',
   },
 }

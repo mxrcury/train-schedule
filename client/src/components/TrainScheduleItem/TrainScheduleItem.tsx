@@ -50,7 +50,7 @@ const TrainScheduleItem = ({ trainSchedule, handleDelete, handleUpdate }: TrainS
         <Typography>
           <b> Ticket price:</b>
         </Typography>
-        <Typography>{trainSchedule.fullTicketPrice} USD</Typography>
+        <Typography>{trainSchedule.fullTicketPrice} UAH</Typography>
       </Item>
       <Button onClick={onUpdate} color='secondary' >
         Edit

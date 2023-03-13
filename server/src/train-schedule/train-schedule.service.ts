@@ -1,11 +1,12 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { TrainSchedule } from './train-schedule.entity'
-import { Like, MongoRepository } from 'typeorm'
-import { TrainScheduleInput } from './train-schedule.input'
+import { MongoRepository } from 'typeorm'
 import { ObjectID } from 'mongodb'
 import { plainToClass } from 'class-transformer'
 import { validate } from 'class-validator'
+
+import { TrainSchedule } from './train-schedule.entity'
+import { TrainScheduleInput } from './train-schedule.input'
 import { SortByPicker } from 'src/consts'
 
 @Injectable()
@@ -34,7 +35,6 @@ export class TrainScheduleService {
           : {},
       order: sortBy && sortBy.length ? SortByPicker[sortBy] : {},
     })
-    return await this.trainScheduleRepository.find()
   }
   async update(id: ObjectID, input: TrainSchedule): Promise<void> {
     this.validateId(id)

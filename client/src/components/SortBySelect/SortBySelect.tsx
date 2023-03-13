@@ -1,14 +1,14 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import React from 'react'
 
 export type SortingTypes = 'price' | 'date' | ''
 
 interface SortBySelectProps {
     sortBy: SortingTypes
-    setSortBy: (value:SortingTypes) => void
+    handleSortBy: (e:SelectChangeEvent<SortingTypes>) => void
 }
 
-const SortBySelect = ({sortBy, setSortBy}:SortBySelectProps) => {
+const SortBySelect = ({sortBy, handleSortBy}:SortBySelectProps) => {
   return (
     <FormControl color="secondary">
           <InputLabel color="secondary" id="demo-simple-select-label">
@@ -19,7 +19,7 @@ const SortBySelect = ({sortBy, setSortBy}:SortBySelectProps) => {
             label="Sort by"
             color="secondary"
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as SortingTypes)}
+            onChange={handleSortBy}
             // displayEmpty
             inputProps={{ 'aria-label': 'Without label' }}
           >

@@ -15,7 +15,5 @@ export const ContextProvider = ({children}:Children) => {
 
 export const useAppContext = () => {
     const {state,dispatch} = useContext(AppContext)
-    // @ts-ignore
-    window.state = state
     return {state,dispatch}
 }

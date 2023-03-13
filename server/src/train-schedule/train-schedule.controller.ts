@@ -11,6 +11,7 @@ import {
 
 import { TrainScheduleService } from './train-schedule.service'
 import { TrainSchedule } from './train-schedule.entity'
+import { TrainScheduleInput } from './train-schedule.input'
 
 @Controller('train-schedule')
 export class TrainScheduleController {
@@ -24,7 +25,7 @@ export class TrainScheduleController {
   }
   @Post()
   async addTrainSchedule(
-    @Body() trainScheduleBody: TrainSchedule
+    @Body() trainScheduleBody: TrainScheduleInput
   ): Promise<TrainSchedule> {
     return await this.trainSchedule.create(trainScheduleBody)
   }

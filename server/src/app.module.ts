@@ -2,8 +2,6 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { join } from 'path'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { TrainScheduleModule } from './train-schedule/train-schedule.module'
 
 @Module({
@@ -21,7 +19,7 @@ import { TrainScheduleModule } from './train-schedule/train-schedule.module'
     }),
     TrainScheduleModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

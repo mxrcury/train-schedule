@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import { Button, Modal, Select, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 
+import {TrainSchedule} from '../../types/trainSchedule.type'
 import styles from '../AuthModal/AuthModal.styles'
 import { DateField, DateTimeField, LocalizationProvider, TimeField } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -12,7 +13,7 @@ interface CreateModalProps {
   title: string
   isOpenModal: boolean
   setModalOpen: (value: boolean) => void
-  getAllValues: (args: { [prop: string]: any }) => void
+  getAllValues: (args: { [prop: string]: any } ) => void
 }
 
 const CreateModal = ({
@@ -43,7 +44,7 @@ const CreateModal = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={styles.modal}>
-          <Button color='error' ><ClearIcon/></Button>
+          <Button onClick={() => setModalOpen(false)} color='error' ><ClearIcon/></Button>
           <Typography variant="h5">Create a new schedule</Typography>
           <Typography id="modal-modal-title">Starting station:</Typography>
           <TextField
